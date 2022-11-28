@@ -44,3 +44,21 @@ func TestLinkedListForEach(t *testing.T) {
 		t.Fatal("Should iterate list")
 	}
 }
+
+func TestLinkedListFind(t *testing.T) {
+	linkedList := NewLinkedList()
+
+	linkedList.Add(20)
+	linkedList.Add(5)
+	linkedList.Add(3)
+	linkedList.Add(12)
+	linkedList.Add(9)
+
+	res, err := linkedList.Find(9)
+	if err != nil {
+		t.Fatal("Should find node by value")
+	}
+	if res.Val != 9 {
+		t.Fatal("Should find node by value correctly")
+	}
+}
